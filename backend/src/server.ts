@@ -1,5 +1,6 @@
 import type { Express } from "express";
 import express from "express";
+import cookieParser from "cookie-parser";
 import "dotenv/config";
 import authRoute from "./routes/auth.routes";
 
@@ -7,6 +8,7 @@ const app: Express = express();
 
 // middleware
 app.use(express.json());
+app.use(cookieParser());
 // routes
 
 app.use("/api", authRoute);

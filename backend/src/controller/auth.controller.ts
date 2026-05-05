@@ -111,6 +111,7 @@ export const login = async (req: Request, res: Response) => {
 };
 
 export const logout = async (req: Request, res: Response) => {
+  console.log("Logout endpoint hit");
   const token = req.cookies["login-token"];
   if (!token) {
     return res.status(400).json({
