@@ -3,8 +3,15 @@ declare global {
     export interface Request {
       userInfo: {
         id: string;
-        role: "admin" | "user";
+        role: "ADMIN" | "USER";
       };
     }
   }
+}
+
+export interface Data {
+  name: string;
+  email: string;
+  password: string;
+  role: "ADMIN" | "USER";
 }
