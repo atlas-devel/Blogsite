@@ -31,7 +31,7 @@ export const registerUser = async (req: Request, res: Response) => {
         name,
         email,
         password: hashPassword,
-        role,
+        role: role.toUpperCase(),
       },
     });
     return res.status(201).json({
@@ -40,9 +40,10 @@ export const registerUser = async (req: Request, res: Response) => {
       user: newUser,
     });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       success: false,
-      message: "Internal server errors",
+      message: "Internal server errors" + error,
     });
   }
 };

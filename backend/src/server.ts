@@ -6,10 +6,10 @@ import authRoute from "./routes/auth.routes";
 const app: Express = express();
 
 // middleware
-
+app.use(express.json());
 // routes
 
-app.use("api", authRoute);
+app.use("/api", authRoute);
 
 const port = Number(process.env.PORT) || 4000;
 
